@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
+
+
 //import Overview from './Overview';
+import Header from './Header';
 import List from './List';
 import Article from './Article';
 import Infos from './Infos';
@@ -10,10 +11,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row center indigo">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>I want #goodnews</h2>
-        </div>
+        <Header />
         <div className="row">
           <div className="col s4 green lighten-5"><List /></div>
           <div className="col s4 lime lighten-5"><Article /></div>
