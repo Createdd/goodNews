@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/Header';
-import App from './components/App';
-import Overview from './components/Overview';
-import Article from './components/Article';
 
-import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
+import App from './components/App';
+//import Overview from './components/Overview';
+import Article from './components/Article';
+import NotFound from './components/NotFound';
+
+import { Router, Route, browserHistory } from 'react-router';
 
 import './index.css';
 
@@ -15,6 +16,7 @@ const Root = () => {
       <Route path="/" component={App}>
         <Route path="view/:articleId" component={Article} />
       </Route>
+      <Route path="*" component={NotFound} />
     </Router>
   );
 };
