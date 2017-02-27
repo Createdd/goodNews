@@ -9,9 +9,8 @@ export default class List extends React.Component {
     super(props);
     this.displayArticle = this.displayArticle.bind(this);
   }
-  displayArticle() {
-    console.log('clicked');
-    console.warn(true);
+  displayArticle(e) {
+    console.log(e);
   }
   render() {
     return (
@@ -20,7 +19,7 @@ export default class List extends React.Component {
         <ol>
           {Articles.map((item, key) => (
             <li className="hoverable card-panel" key={key}>
-              <Article article={item} onClick={this.displayArticle}/>
+              <Article article={item} index={key} onClick={this.displayArticle}/>
             </li>
           ))}
         </ol>
