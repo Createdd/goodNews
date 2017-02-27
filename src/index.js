@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 import Overview from './components/Overview';
-import Article from './components/Article';
+import ArticleDetail from './components/ArticleDetail';
 import NotFound from './components/NotFound';
 
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
@@ -15,7 +15,7 @@ const Root = () => {
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Overview} />
-        <Route path="view/:articleId" component={Article} />
+        <Route path="view/:articleId" component={ArticleDetail} />
       </Route>
       <Route path="*" component={NotFound} />
     </Router>
