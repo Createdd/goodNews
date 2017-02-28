@@ -1,9 +1,17 @@
 import React from 'react';
 
 export default class NewStory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('submitted');
+  }
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h4>Write your own Story: ⬇️</h4>
         <label>
           Title:
@@ -13,7 +21,7 @@ export default class NewStory extends React.Component {
           Story:
           <textarea className="materialize-textarea" />
         </label>
-        <input className="btn waves-effect waves-light" type="submit" value="Submit" />
+        <button className="btn waves-effect waves-light" type="submit">Submit 🚀</button>
       </form>
     );
   }
