@@ -12,6 +12,7 @@ export default class NewStory extends React.Component {
       title: this.title.value,
       story: this.story.value
     }
+    this.props.addArticle(article);
     this.articleForm.reset();
   }
   render() {
