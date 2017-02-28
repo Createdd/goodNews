@@ -7,6 +7,19 @@ import NewStory from './NewStory';
 import Header from './Header';
 
 export default class Overview extends React.Component {
+  constructor() {
+    super();
+    this.addArticle = this.addArticle.bind(this);
+    this.state = {
+      articlesState: {},
+    }
+  }
+  addArticle(article) {
+    const articles = {...this.state.articles};
+    const timestamp = Date.now();
+    articles[`article-${timestamp}`] = article
+    this.setState({articlesState: articles})
+  }
   render() {
     return (
       <div>
@@ -16,7 +29,7 @@ export default class Overview extends React.Component {
           <div className="col s4 lime lighten-5">
             <ArticleDetail params={this.props.params} test='test'/>
           </div>
-          <div className="col s4 orange lighten-5"><NewStory /></div>
+          <div className="col s4 orange lighten-5"><NewStory addArticle={this.addArticle} /></div>
         </div>
       </div>
     );
