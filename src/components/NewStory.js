@@ -12,11 +12,11 @@ export default class NewStory extends React.Component {
       title: this.title.value,
       story: this.story.value
     }
-    console.log(article);
+    this.articleForm.reset();
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form ref={(reset) => this.articleForm = reset} onSubmit={this.handleSubmit}>
         <h4>Write your own Story: ⬇️</h4>
         <label>
           Title:
