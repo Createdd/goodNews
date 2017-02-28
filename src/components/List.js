@@ -1,19 +1,19 @@
 import React from 'react';
 
-import Articles from '../data/Articles';
-
 import Article from './Article';
 
 export default class List extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
         <h4>List of articles:</h4>
         <ol>
-          {Articles.map((item, key) => (
+          {Object.keys(this.props.state.articlesState).map((key) => (
             <li className="hoverable card-panel" key={key}>
-              <Article article={item} index={key}/>
+              <Article index={key} details={this.props.state.articlesState[key]}/>
             </li>
           ))}
         </ol>

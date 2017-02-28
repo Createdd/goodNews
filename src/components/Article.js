@@ -6,15 +6,15 @@ export default class Article extends React.Component {
     this.displayArticle = this.displayArticle.bind(this);
   }
   displayArticle(e) {
-    let index = this.props.index +1;
+    let index = this.props.index;
     this.context.router.push(`/view/${index}`);
   }
   render() {
     return (
       <div onClick={e => this.displayArticle(e)}>
-        {this.props.index +1}<br/>
-        <b>{this.props.article.title}</b><br/>
-        {this.props.article.author}<br/>
+        {this.props.index}<br/>
+      <b>{this.props.details.title}</b><br/>
+        {this.props.details.author}<br/>
       </div>
     );
   }
