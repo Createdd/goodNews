@@ -2,7 +2,7 @@ import React from 'react';
 
 import List from './List';
 import ArticleDetail from './ArticleDetail';
-import Infos from './Infos';
+import NewStory from './NewStory';
 
 import Header from './Header';
 
@@ -16,7 +16,7 @@ export default class Overview extends React.Component {
           <div className="col s4 lime lighten-5">
             <ArticleDetail params={this.props.params} test='test'/>
           </div>
-          <div className="col s4 orange lighten-5"><Infos /></div>
+          <div className="col s4 orange lighten-5"><NewStory /></div>
         </div>
       </div>
     );
