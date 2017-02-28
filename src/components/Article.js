@@ -7,7 +7,6 @@ export default class Article extends React.Component {
   }
   displayArticle(e) {
     let index = this.props.index +1;
-    console.info(`/view/${index}`);
     this.context.router.push(`/view/${index}`);
   }
   render() {

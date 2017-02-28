@@ -4,15 +4,16 @@ export default class NewStory extends React.Component {
   render() {
     return (
       <form>
+        <h4>Write your own Story: ⬇️</h4>
         <label>
           Title:
           <input type="text" />
         </label>
         <label>
           Story:
-          <input type="text" />
+          <textarea className="materialize-textarea" />
         </label>
-        <input className="btn" type="submit" value="Submit" />
+        <input className="btn waves-effect waves-light" type="submit" value="Submit" />
       </form>
     );
   }
