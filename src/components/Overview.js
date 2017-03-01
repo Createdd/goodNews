@@ -42,7 +42,7 @@ export default class Overview extends React.Component {
         <div className="row">
           <div className="col s4 green lighten-5"><List state={this.state} showArticle={this.showArticle}/></div>
           <div className="col s4 lime lighten-5">
-            <ArticleDetail params={this.props.params}/>
+            <ArticleDetail params={this.props.params} state={this.state}/>
             <button onClick={e => this.loadArticles()} className="btn">Load that shit</button>
           </div>
           <div className="col s4 orange lighten-5"><NewStory addArticle={this.addArticle} /></div>
