@@ -11,8 +11,10 @@ export default class Overview extends React.Component {
   constructor() {
     super();
     this.addArticle = this.addArticle.bind(this);
+    this.showArticle = this.showArticle.bind(this);
     this.state = {
       articlesState: {},
+      showArticle: {}
     }
   }
   addArticle(article) {
@@ -26,14 +28,21 @@ export default class Overview extends React.Component {
       articlesState: Data
     })
   }
+  showArticle(key) {
+    const show = {...this.state.showArticle};
+    show[key] = show[key] + 1;
+    this.setState({
+      showArticle:  show
+    })
+  }
   render() {
     return (
       <div>
         <Header />
         <div className="row">
-          <div className="col s4 green lighten-5"><List state={this.state}/></div>
+          <div className="col s4 green lighten-5"><List state={this.state} showArticle={this.showArticle}/></div>
           <div className="col s4 lime lighten-5">
-            <ArticleDetail params={this.props.params} test='test'/>
+            <ArticleDetail params={this.props.params}/>
             <button onClick={e => this.loadArticles()} className="btn">Load that shit</button>
           </div>
           <div className="col s4 orange lighten-5"><NewStory addArticle={this.addArticle} /></div>
