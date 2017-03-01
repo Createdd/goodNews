@@ -8,9 +8,14 @@ export default class List extends React.Component {
       <div>
         <h4>List of articles:</h4>
         <ol>
-          {Object.keys(this.props.state.articlesState).map((key) => (
+          {Object.keys(this.props.state.articlesState).map(key => (
             <li className="hoverable card-panel" key={key}>
-              <Article index={key} details={this.props.state.articlesState[key]}/>
+              <Article
+                index={key}
+                details={this.props.state.articlesState[key]}
+                show={this.props.state.showArticle[key]}
+                showArticle={this.props.showArticle}
+              />
             </li>
           ))}
         </ol>

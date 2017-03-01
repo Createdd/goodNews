@@ -8,6 +8,12 @@ export default class Article extends React.Component {
   displayArticle(e) {
     let index = this.props.index;
     this.context.router.push(`/view/${index}`);
+    let information = {
+      title: this.props.details.title,
+      author: this.props.details.author,
+      url: this.props.details.url
+    }
+    this.props.showArticle(information);
   }
   render() {
     return (

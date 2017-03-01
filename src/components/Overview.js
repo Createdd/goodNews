@@ -29,8 +29,8 @@ export default class Overview extends React.Component {
     })
   }
   showArticle(key) {
-    const show = {...this.state.showArticle};
-    show[key] = show[key] + 1;
+    let show = key;
+    console.info(show);
     this.setState({
       showArticle:  show
     })
