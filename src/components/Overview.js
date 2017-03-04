@@ -18,6 +18,15 @@ export default class Overview extends React.Component {
       showArticle: {}
     }
   }
+  componentWillMount() {
+    this.ref = base.syncState('articles', {
+      context: this,
+      state: 'articlesState'
+    })
+  }
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
   addArticle(article) {
     const articles = {...this.state.articlesState};
     const timestamp = Date.now();
