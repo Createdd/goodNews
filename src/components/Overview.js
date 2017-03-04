@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Data from '../data/Articles';
+import base from '../base';
 
 import List from './List';
 import ArticleDetail from './ArticleDetail';
