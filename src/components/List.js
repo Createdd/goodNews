@@ -13,7 +13,6 @@ export default class List extends React.Component {
               <Article
                 index={key}
                 details={this.props.state.articlesState[key]}
-                show={this.props.state.showArticle[key]}
                 showArticle={this.props.showArticle}
               />
             </li>

@@ -11,7 +11,8 @@ export default class Article extends React.Component {
     let information = {
       title: this.props.details.title,
       author: this.props.details.author,
-      url: this.props.details.url
+      url: this.props.details.url,
+      story: this.props.details.story
     }
     this.props.showArticle(information);
   }
