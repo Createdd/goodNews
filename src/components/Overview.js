@@ -14,7 +14,7 @@ export default class Overview extends React.Component {
     this.addArticle = this.addArticle.bind(this);
     this.showArticle = this.showArticle.bind(this);
     this.state = {
-      articlesState: {},
+      articlesState: Data,
       showArticle: {}
     };
   }
@@ -47,11 +47,6 @@ export default class Overview extends React.Component {
     articles[`article-${timestamp}`] = article;
     this.setState({ articlesState: articles });
   }
-  loadArticles() {
-    this.setState({
-      articlesState: Data
-    });
-  }
   showArticle(key) {
     let show = key;
     this.setState({
@@ -68,9 +63,6 @@ export default class Overview extends React.Component {
           </div>
           <div className="col s4 lime lighten-5">
             <ArticleDetail params={this.props.params} state={this.state} />
-            <button onClick={e => this.loadArticles()} className="btn">
-              Load articles
-            </button>
           </div>
           <div className="col s4 orange lighten-5">
             <NewStory addArticle={this.addArticle} />
