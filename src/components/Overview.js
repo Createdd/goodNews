@@ -43,8 +43,8 @@ export default class Overview extends React.Component {
   }
   addArticle(article) {
     const articles = { ...this.state.articlesState };
-    const timestamp = Date.now();
-    articles[`article-${timestamp}`] = article;
+    const size = Object.keys(articles).map(key => articles.hasOwnProperty(key)).length
+    articles[size] = article;
     this.setState({ articlesState: articles });
   }
   showArticle(key) {
